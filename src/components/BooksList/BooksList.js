@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 const BooksList = () => {
 	const books = useSelector((state) => getAllBooks(state));
 	const dispatch = useDispatch();
-	console.log(books);
 
 	const handleDelete = (bookId) => {
 		dispatch(removeBook(bookId));

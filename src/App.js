@@ -1,25 +1,14 @@
 import BooksList from './components/BooksList/BooksList';
 import BookForm from './components/BookForm/BookForm';
+import { fetchBooks } from './redux/booksRedux';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 
 const App = () => {
-	// const removeBook = (bookId) => {
-	// 	setBooks(books.filter((book) => book.id !== bookId));
-	// };
+	const dispatch = useDispatch();
 
-	// const addBook = (newBook) => {
-	// 	setBooks([
-	// 		...books,
-	// 		{ id: shortid(), title: newBook.title, author: newBook.author },
-	// 	]);
-	// };
+	useEffect(() => dispatch(fetchBooks()), [dispatch]);
 
-	// return (
-	// 	<div>
-	// 		<h1>Book App</h1>
-	// 		<BooksList books={books} removeBook={removeBook} />
-	// 		<BookForm addBook={addBook} />
-	// 	</div>
-	// );
 	return (
 		<div>
 			<h1>Book App</h1>
